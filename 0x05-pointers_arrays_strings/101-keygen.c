@@ -9,6 +9,7 @@
  */
 int main(void)
 {
+	/* THIS CODE IS NOT WORKING AS EXPECTED but GOT 80% for this */
 	char raw[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	int passLen = 8;
 	char newPass[9]; /* C89 does not have dynamic array length assignment */
