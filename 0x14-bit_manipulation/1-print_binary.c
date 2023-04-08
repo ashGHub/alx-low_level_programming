@@ -8,14 +8,11 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int quotient;
-
 	if (n <= 1)
 	{
 		_putchar('0' + n);
 		return;
 	}
-	quotient = n >> 1;
-	print_binary(quotient);
-	_putchar('0' + (n - (quotient * 2)));
+	print_binary(n >> 1);
+	_putchar('0' + (n & 1));
 }
