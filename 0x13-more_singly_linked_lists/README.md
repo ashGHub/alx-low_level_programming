@@ -36,3 +36,8 @@ size_t print_listint_safe(const listint_t *head)
 ```
 However, the code checker keep saying case: list of nodes not aligned (in memory) failed.
 For now, don't know how to fix that.
+
+
+## Edited: Apr 8/2023
+The reason is not working is the address allocation is not predictable when we have more and more nodes
+
