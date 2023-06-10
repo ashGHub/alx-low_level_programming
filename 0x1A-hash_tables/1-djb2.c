@@ -4,7 +4,7 @@
  * hash_djb2 - hash a key using djb2 algorithm
  * @str: key to hash
  *
- * Return: hash index for the key
+ * Return: hash for the key
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {
