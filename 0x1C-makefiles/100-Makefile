@@ -6,18 +6,15 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-.PHONY: all
-all: $(OBJ) m.h
+.PHONY: all clean oclean fclean re
+
+all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-.PHONY: clean
 clean:
 	$(RM) *~ \#* *.swp $(NAME)
-.PHONY: oclean
 oclean:
 	$(RM) $(OBJ)
-.PHONY: fclean
 fclean: clean oclean
-.PHONY: re
 re: fclean all
 
 # make implicitly knows the rules for building .o files from .c files
