@@ -4,14 +4,10 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-Name = school
+NAME = school
 
 all: $(OBJ) 
-	$(CC) $(OBJ) -o $(Name)
+	$(CC) $(OBJ) -o $(NAME)
 
-# make implicitly knows the rules for building .o files from .c files
-# The implicit rule for building object files is as follows
-# %.o: %.c
-#	$(CC) -c -o $@ $<
-# $@ - iterates the targets lists
-# $< - getts the corresponding c file for given object file name output
+%.o: %.c
+	$(CC) -c -o $@ $<
