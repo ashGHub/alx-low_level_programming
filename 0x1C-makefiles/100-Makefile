@@ -1,0 +1,29 @@
+# _*_ Makefile _*_
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+.PHONY: all
+all: $(OBJ) m.h
+	$(CC) $(OBJ) -o $(NAME)
+.PHONY: clean
+clean:
+	$(RM) -f *~ \#* *.swp $(NAME)
+.PHONY: oclean
+oclean:
+	$(RM) -f $(OBJ)
+.PHONY: fclean
+fclean:
+	$(RM) -f *~ \#* *.swp $(OBJ) $(NAME)
+.PHONY: re
+re: fclean all
+
+# make implicitly knows the rules for building .o files from .c files
+# The implicit rule for building object files is as follows
+# %.o: %.c
+#       $(CC) $(CFLAGS) -c -o $@ $<
+# $@ - iterates the targets lists
+# $< - getts the corresponding c file for given object file name output
